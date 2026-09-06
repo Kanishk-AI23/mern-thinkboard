@@ -1,9 +1,10 @@
 import axios from "axios"
 
+//in production, ther is no localhost so we have to make this dynamic
+const BASE_URL = import.meta.env.MODE === "development" ? "http://localhost:5001/api" : "/api"
 const api = axios.create({
-    baseURL: "http://localhost:5001/api",  //This sets the base URL for all requests made using this axios instance to the backend API.
-});                                        //We didn't use the full URL in every request, instead we can just use the endpoint (like "/notes", "/users") and axios will automatically prepend the base URL.
-export default api;
+    baseURL: BASE_URL,  
+});                                        
 
 // This code creates an axios instance with a base URL pointing to the backend API. 
 // It allows you to make HTTP requests to the backend easily by using this global instance throughout your frontend application.
