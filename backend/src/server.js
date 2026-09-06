@@ -9,7 +9,7 @@ import path from "path"; //Build into Node.js module that provides utilities for
 
 
 import { connectDB } from "./config/db.js";
-import notesRoutes from "./routes/notesroutes.js";
+import notesRoutes from "./routes/notesRoutes.js";
 import rateLimiter from "./middleware/rateLimiter.js";
 
 
