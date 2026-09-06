@@ -52,10 +52,10 @@ app.use("/api/notes", notesRoutes);
 
 //This condition checks if the application is running in a production environment. If it is, the following code block will be executed to serve the frontend files.
 if(process.env.NODE_ENV === "production") { 
-    app.use(express.static(path.join(_dirname, "frontend", "dist")));
+    app.use(express.static(path.join(_dirname, "../frontend", "dist")));
 
     app.get("*", (req, res) => {
-        res.sendFile(path.join(_dirname, "frontend", "dist", "index.html"));
+        res.sendFile(path.join(_dirname, "../frontend", "dist", "index.html"));
     })
 }
 
