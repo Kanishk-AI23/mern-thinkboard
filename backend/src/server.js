@@ -52,13 +52,14 @@ app.use("/api/notes", notesRoutes);
 
 //This condition checks if the application is running in a production environment. If it is, the following code block will be executed to serve the frontend files.
 if(process.env.NODE_ENV === "production") { 
-    app.use(express.static(path.join(_dirname, "../frontend", "dist", "index.html"))); //Serve static file from the frontend/dist/index.html directory.
+    app.use(express.static(path.join(_dirname, "frontend", "dist")));
 
     app.get("*", (req, res) => {
-        res.sendFile(path.join(_dirname, "../frontend/dist/index.html")); //Serve the index.html file for any other routes not handled by the API.
+        res.sendFile(path.join(_dirname, "frontend", "dist", "index.html"));
     })
-
 }
+
+
 
 connectDB()
   .then(() => app.listen(5001, () => console.log("Server started at port 5001")))
