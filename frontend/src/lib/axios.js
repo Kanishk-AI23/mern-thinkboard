@@ -10,3 +10,4 @@ const api = axios.create({
 // It allows you to make HTTP requests to the backend easily by using this global instance throughout your frontend application.
 // This allows you to make requests to the backend without having to specify the full URL each time, making your code cleaner and easier to maintain.
                                                
+export default api;
